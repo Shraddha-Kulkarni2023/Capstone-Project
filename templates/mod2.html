@@ -1,0 +1,218 @@
+<!-- <html>
+  <title>Capstone Project</title>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename='styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="div3">
+      <div class="div1">
+        <p class="one">
+          <img
+            class="img1"
+            src="{{ url_for('static' , filename= 'pics/projimg1.jpg')}}"
+          />
+          ParaAssist
+        </p>
+        <p class="two">Parental Help</p>
+      </div>
+    </div>
+    <div class="div2">
+        <ul>
+          <li><a href="Login.html">Login</li></a>
+          <li><a href="Contact.html">Contact</li></a>
+          <li><a href="FAQ.html">FAQ</li></a>
+          <li><a href="templates/About.html">About</a></li>
+        </ul>
+    <div class="div4">
+        <img
+            class="img2" width="1500" height="500px"
+            src="{{ url_for('static' , filename= 'pics/projimg4.jpeg')}}"
+          />
+    </div>
+    <p class="three"> 
+        This is a unique platform for the parents for maintaining all valuable information related to their kids. Information related to academics, extra-curriculum activites can be stored. 
+    </p>
+    <form action="{{ url_for('next_page') }}" method="get">
+    <button type = "submit" class="button1">Register</button> 
+    </form>
+    </div>  
+    
+  </body>
+</html>-->
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Child Management Software</title>
+    <style>
+      body {
+        background-image: url("your-background-image.jpg");
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .menu {
+        background-color: #333;
+        overflow: hidden;
+      }
+      .menu a {
+        float: left;
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .menu a:hover {
+        background-color: #555;
+      }
+      .content {
+        padding: 20px;
+        text-align: center;
+      }
+      .content img {
+        width: 100%;
+        max-width: 100%;
+      }
+      .register-button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#login">Login</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="content">
+     
+      <img src="static/pics/projimg4.jpeg" alt="Image 1" />
+      
+    </div>
+    <div class="content" id="about">
+      <h1>ParaAid Software</h1>
+      <p>Software for parent's ease.</p>
+    </div>
+    <div class="content" id="login">
+      <h1>Login</h1>
+      
+    </div>
+    <div class="content" id="faq">
+      <h1>FAQ</h1>
+     
+    </div>
+    <div class="content" id="contact">
+      <h1>Contact Us</h1>
+     
+    </div>
+    <div class="content">
+      <button class="register-button">Register</button>
+    </div>
+  </body>
+</html>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Child Management Software</title>
+    <style>
+      body {
+        background-color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      nav {
+        background-color: rgb(92, 122, 161);
+        color: #fff;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 20px;
+      }
+
+      .container {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .banner {
+        width: 100%;
+        height: 500px;
+      }
+
+      .register-button {
+        background-color: #6593b1;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .register-button:hover {
+        background-color: #bf38c1;
+      }
+
+      a {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ParaAssist</h1>
+      <h5>Parental Help</h5>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/About">About</a>
+        </li>
+        <li><a href="/next_page">Login</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li>
+          <a href="/Contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <img
+        class="banner"
+        src="static/pics/projimg4.jpeg"
+        alt="Child Management Software Banner"
+      />
+      <p>
+        Welcome to our ParaAssist Software. Manage your kids with joy and ease.
+      </p>
+      <br />
+      <form action="{{ url_for('next_page') }}" method="get">
+        <button class="register-button">Register</button>
+      </form>
+    </div>
+  </body>
+</html>

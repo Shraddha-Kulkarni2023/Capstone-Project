@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Child Management Software</title>
+    <style>
+      body {
+        background-image: url("static/pics/background3.jpeg");
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+
+      header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      nav {
+        background-color: rgb(92, 122, 161);
+        color: #fff;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 20px;
+      }
+
+      .container {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .banner {
+        width: 100%;
+        height: 500px;
+      }
+
+      a {
+        color: white;
+      }
+
+      #childform {
+        background-color: #3498db;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        width: 500px;
+        text-align: center;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin-left: 450px;
+      }
+
+      #childform h2 {
+        text-align: center;
+      }
+
+      #childform label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      #childform input[type="text"],
+      #childform input[type="date"],
+      #childform input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      #childform select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      #childform button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ParaAssist</h1>
+      <h5>Parental Help</h5>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/About">About</a>
+        </li>
+        <li><a href="/next_page">Login</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li>
+          <a href="/Contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <p
+      style="
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 200px;
+        font-size: xx-large;
+      "
+    ></p>
+
+    <div id="childform">
+      <h2>Add a Child</h2>
+      <br />
+      <form action="{{url_for('childform') }}" method="post">
+        <label for="firstName" style="width: 200px">First Name:</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          style="width: 200px"
+          required
+        /><br /><br />
+
+        <label for="lastName" style="width: 200px">Last Name:</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          style="width: 200px"
+          required
+        /><br /><br />
+
+        <label for="dob" style="width: 200px">Date of Birth:</label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          style="width: 200px"
+          required
+        /><br /><br />
+
+        <label for="wt" style="width: 200px">Weight (kg):</label>
+        <input
+          type="number"
+          id="wt"
+          name="wt"
+          style="width: 200px"
+          required
+        /><br /><br />
+
+        <label for="ht" style="width: 200px">Height (cm):</label>
+        <input
+          type="number"
+          id="ht"
+          name="ht"
+          style="width: 200px"
+          required
+        /><br /><br />
+
+        <label for="grade" style="width: 200px">Grade:</label>
+        <select id="grade" name="grade" style="width: 200px" required>
+          <br /><br />
+          <option value="1">Grade 1</option>
+          <option value="2">Grade 2</option>
+          <option value="3">Grade 3</option>
+          <option value="3">Grade 4</option>
+          <option value="3">Grade 5</option>
+          <option value="3">Grade 6</option>
+          <option value="3">Grade 7</option>
+          <option value="3">Grade 8</option>
+          <option value="3">Grade 9</option>
+          <option value="3">Grade 10</option>
+          <option value="3">Grade 11</option>
+          <option value="3">Grade 12</option></select
+        ><br /><br />
+
+        <!-- <label for="scienceMarks" style="width: 200px">Science:</label>
+          <input
+            type="number"
+            id="scienceMarks"
+            name="scienceMarks"
+            style="width: 200px"
+          />
+
+          <label for="mathsMarks" style="width: 200px">Maths:</label>
+          <input
+            type="number"
+            id="mathsMarks"
+            name="mathsMarks"
+            style="width: 200px"
+        />
+
+          <label for="englishMarks" style="width: 200px">English:</label>
+          <input
+           type="number"
+            id="englishMarks"
+            name="englishMarks"
+            style="width: 200px"
+          /><br /><br />-->
+        <!-- <label for="parentName" style="width: 200px">Parent Name:</label>
+        <input
+          type="text"
+          id="parentName"
+          name="parentName"
+          style="width: 200px"
+          required
+        />
+        <script>
+          const txt1 = document.getElementById("parentName");
+          txt1.value = variableValue2;
+        </script>-->
+        <button type="submit">Add Child</button>
+      </form>
+    </div>
+  </body>
+</html>

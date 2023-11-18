@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      #child-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        width: 400px;
+      }
+
+      #child-form h2 {
+        text-align: center;
+      }
+
+      #child-form label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      #child-form input[type="text"],
+      #child-form input[type="date"],
+      #child-form input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      #child-form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      #child-form button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="child-form">
+      <h2>Add a Child</h2>
+      <form action="#" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="wt">Weight (kg):</label>
+        <input type="number" id="wt" name="wt" required />
+
+        <label for="ht">Height (cm):</label>
+        <input type="number" id="ht" name="ht" required />
+
+        <label for="grade">Grade:</label>
+        <select id="grade" name="grade" required>
+          <option value="1">Grade 1</option>
+          <option value="2">Grade 2</option>
+          <option value="3">Grade 3</option>
+          <!-- Add more grades as needed -->
+        </select>
+
+        <label for="scienceMarks">Science Marks:</label>
+        <input type="number" id="scienceMarks" name="scienceMarks" />
+
+        <label for="mathsMarks">Maths Marks:</label>
+        <input type="number" id="mathsMarks" name="mathsMarks" />
+
+        <label for="englishMarks">English Marks:</label>
+        <input type="number" id="englishMarks" name="englishMarks" />
+
+        <button type="submit">Add Child</button>
+      </form>
+    </div>
+  </body>
+</html>

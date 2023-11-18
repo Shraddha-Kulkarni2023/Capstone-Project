@@ -1,0 +1,105 @@
+<!--<html>
+  <title>Capstone Project</title>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles.css')}}" />
+  </head>
+  <body>
+    <div class="div3">
+    <div class="div1">
+      <p class="one">
+        <img
+          class="img1"
+          src="{{ url_for('static' , filename= 'pics/projimg1.jpg')}}" 
+        />
+       ParaAssist
+      </p>
+      <p class="two">Parental Help</p>
+    </div>
+    <div class="div2" style="opacity: 0;">
+      <ul>
+        <li><a href="Login.html">Login</li></a>
+        <li><a href="Contact.html">Contact</li></a>
+        <li><a href="FAQ.html">FAQ</li></a>
+        <li><a href="/Users/sunilkulkarni/Desktop/MS Final trimester/MS Capstone Project/Capstone Visual code/templates/About.html">About</a></li>
+      </ul>
+    </div>
+    <div class="div4">
+    <form action="/login_form" method="post">
+      System Login<br><br><br>
+      <label for="uname">Username</label>
+      <input type="text" id="uname" name="uname"><br><br>
+      <label for="pwd">Password</label>
+      <input type="password" id="pwd" name="pwd"><br><br>
+      <input type="submit" value="Login" name="button1">
+    </form>
+    </div>
+    </div>
+  </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child Management Software Login</title>
+    <style>
+      body {
+        background-image: url("static/pics/background3.jpeg"); /* Replace with your background image URL */
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+
+      .login-container h2 {
+        margin-top: 0;
+      }
+
+      .login-container input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .login-container button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .login-container button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Welcome to ParaAssist</h2>
+      <form action="/login_form" method="post">
+        <label for="uname">Username</label>
+        <input type="text" id="uname" name="uname" /><br /><br />
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" name="pwd" /><br /><br />
+        <input type="submit" value="Login" name="button1" />
+      </form>
+    </div>
+  </body>
+</html>

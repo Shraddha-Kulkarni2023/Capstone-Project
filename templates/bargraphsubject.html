@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParaAssist Child Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("static/pics/background3.jpeg");
+      }
+
+      #sidebar {
+        position: fixed;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+      #sidebar toggle ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #sidebar toggle ul li {
+        list-style-type: none;
+        padding: 10px 0;
+        border-bottom: 1px solid #555;
+      }
+
+      #sidebar ul li:last-child {
+        border-bottom: none;
+      }
+
+      #sidebar ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      #content {
+        margin-left: 260px;
+        padding: 20px;
+      }
+
+      #content h1 {
+        font-size: 24px;
+        margin-left: 500px;
+      }
+
+      .dashboard-item {
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Define different styles for menu items */
+      #academic {
+        background-color: #66bb6a;
+      }
+
+      #extracurricular {
+        background-color: #f57f17;
+      }
+
+      #readinglog {
+        background-color: #3f51b5;
+      }
+
+      #screentime {
+        background-color: #e53935;
+      }
+      
+      #body h1 {
+
+        margin-left: 500px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      canvas {
+      border: 1px solid black;
+      margin-left: 500px;
+      margin-top: 100px;
+    }
+    </style>
+  </head>
+  <body>
+    Bar Graph 
+    <div id="new" style="margin-left: 500px;">
+      
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const variableValuefinal = urlParams.get('variableValue');
+        //document.write("<h1> This is " +  variableValuefinal + "'s Dashboard</h1>");
+
+    </script>
+    
+   <h1> This is {{ studname }} 's Dashboard</h1>
+  </div>
+  
+    <div id="sidebar">
+      <ul>
+        <li><span class="toggle">+</span>Academic Information
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+
+            <li><a href="/mod11"><span class="toggle">+</span>Display information</a></li>
+            <li><a href="/mod12">Display information yearwise</a></li>
+            <li><a href="#">Performance Chart Subject wise</a></li>
+
+
+          </ul>
+        </li>
+
+        <li><span class="toggle">+</span>Extra Curriculum
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><span class="toggle">+</span>Reading Log
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><span class="toggle">+</span>Screen Time
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display Graph</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><a href="#screentime">Generate Entire Report</a></li>
+        <ul id="tree">
+          <li>
+            <span class="toggle">+</span>Child Operations
+            <ul>
+              <li><a href="/ChildAdd?var1={{uname}}">Add a Child</a></li>
+              <li><a href="#">Update a Child</a></li>
+              <li><a href="#">Delete a Child</a></li>
+            </ul>
+         </li> 
+         <li><a href=#>Logout</a></li>
+      </ul>
+    </div>
+    <div style="margin-left: 500px;margin-top: 200px;">
+    <label for="year">Select a Year:</label>
+       <form id="formselect2">
+        <select id="dropdown2">
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2021">2020</option>
+            <option value="2021">2019</option>
+        </select>
+        <button type="button" onclick="submit2()" id="sub2">Choose Year</button>
+        <!-- <button type="button" onclick="sub1()" id="sub3">Submit</button>-->
+
+        <script>
+            function submit2() {
+                var dropdownValue1 = document.getElementById("dropdown2").value;
+                window.location.href = "/bargraphsubject?value2=" + dropdownValue1;
+            }
+        </script>
+        </form>
+    </div>
+    <canvas id="barGraph" width="800" height="300"></canvas>
+    <canvas id="barGraph1" width="800" height="300"></canvas>
+    <canvas id="barGraph2" width="800" height="300"></canvas>
+    <script>
+        // Sample data
+        var subjectName = "Math";
+        var testMarks = "{{ mydata }}"; // Test scores for different tests
+      
+        // Get the canvas element
+        var canvas = document.getElementById("barGraph");
+        var ctx = canvas.getContext("2d");
+      
+        // Set up the bar graph
+        var barWidth = 50;
+        var barSpacing = 20;
+        var startX = 100;
+        var startY = 300;
+      
+        // Draw the bars
+        for (var i = 0; i < testMarks.length; i++) {
+          var barHeight = testMarks[i] * 2; // Scale for better visualization
+          ctx.fillStyle = "#ff0000"; // Red color for the bars
+          ctx.fillRect(startX + i * (barWidth + barSpacing), startY - barHeight, barWidth, barHeight);
+      
+          // Display test labels below each bar
+          ctx.fillStyle = "#000";
+          ctx.fillText("Test " + (i + 1), startX + i * (barWidth + barSpacing), startY + 15);
+        }
+
+        var fontSize = 24;
+        ctx.font = fontSize + "px Times New Roman"; 
+      
+        // Display subject name
+        ctx.fillStyle = "#000";
+        ctx.fillText(subjectName, canvas.width / 2 - 50, canvas.height - 250);
+      </script>
+
+       <script>
+        // Sample data
+        var subjectName1 = "Science";
+        var testMarks = "{{ mydata1 }}"; // Test scores for different tests
+      
+        // Get the canvas element
+        var canvas = document.getElementById("barGraph1");
+        var ctx = canvas.getContext("2d");
+      
+        // Set up the bar graph
+        var barWidth = 50;
+        var barSpacing = 20;
+        var startX = 100;
+        var startY = 300;
+      
+        // Draw the bars
+        for (var i = 0; i < testMarks.length; i++) {
+          var barHeight = testMarks[i] * 2; // Scale for better visualization
+          ctx.fillStyle = "#ff0000"; // Red color for the bars
+          ctx.fillRect(startX + i * (barWidth + barSpacing), startY - barHeight, barWidth, barHeight);
+      
+          // Display test labels below each bar
+          ctx.fillStyle = "#000";
+          ctx.fillText("Test " + (i + 1), startX + i * (barWidth + barSpacing), startY + 15);
+        }
+
+        var fontSize = 24;
+        ctx.font = fontSize + "px Times New Roman"; 
+      
+        // Display subject name
+        ctx.fillStyle = "#000";
+        ctx.fillText(subjectName1, canvas.width / 2 - 50, canvas.height - 250);
+      </script>
+
+
+<script>
+    // Sample data
+    var subjectName2 = "PE";
+    var testMarks = "{{ mydata2 }}"; // Test scores for different tests
+  
+    // Get the canvas element
+    var canvas = document.getElementById("barGraph2");
+    var ctx = canvas.getContext("2d");
+  
+    // Set up the bar graph
+    var barWidth = 50;
+    var barSpacing = 20;
+    var startX = 100;
+    var startY = 300;
+  
+    // Draw the bars
+    for (var i = 0; i < testMarks.length; i++) {
+      var barHeight = testMarks[i] * 2; // Scale for better visualization
+      ctx.fillStyle = "#ff0000"; // Red color for the bars
+      ctx.fillRect(startX + i * (barWidth + barSpacing), startY - barHeight, barWidth, barHeight);
+  
+      // Display test labels below each bar
+      ctx.fillStyle = "#000";
+      ctx.fillText("Test " + (i + 1), startX + i * (barWidth + barSpacing), startY + 15);
+    }
+
+    var fontSize = 24;
+    ctx.font = fontSize + "px Times New Roman"; 
+  
+    // Display subject name
+    ctx.fillStyle = "#000";
+    ctx.fillText(subjectName2, canvas.width / 2 - 50, canvas.height - 250);
+  </script>
+
+   
+</body>
+</html>
+    

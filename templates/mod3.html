@@ -1,0 +1,155 @@
+ <!-- <html>
+  <title>Capstone Project</title>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename='styles.css')}}"
+    />
+  </head>
+  <body style="align-items: center; justify-content: center">
+    <div class="div3" style="justify-content: center">
+      <div class="div1">
+        <p class="one">
+          <img
+            class="img1"
+            src="{{ url_for('static' , filename= 'pics/projimg1.jpg')}}"
+          />
+          ParaAssist
+        </p>
+        <p class="two" style="justify-items: center">Parental Help</p>
+      </div>
+    </div>
+    <div class="div5">
+      <p class="pfour" style="margin-top: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;font-size: xx-large;">Are you a Existing User <br />
+      <form action="{{ url_for('next_page1') }}" method="post">
+        <button type="submit" class="button2" style="margin-top: 20px;">
+          Yes
+        </button>
+      </form>
+      <form action="{{ url_for('next_page2') }}" method="post">
+        <button type="submit" class="button3"style="margin-top: 20px;">
+          No
+        </button>
+      </form>
+      </p>
+    </div>
+  </body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Child Management Software</title>
+    <style>
+      body {
+        background-image: url("static/pics/background3.jpeg");
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      nav {
+        background-color: rgb(92, 122, 161);
+        color: #fff;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 20px;
+      }
+
+      .container {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .banner {
+        width: 100%;
+        height: 500px;
+      }
+
+      .register-button {
+        background-color: #6593b1;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .register-button:hover {
+        background-color: #bf38c1;
+      }
+
+      a {
+        color: white;
+      }
+
+      .div5 {
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+      }
+      .button3 {
+
+        border-radius: 25%;
+        background-color: dodgerblue;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: medium;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ParaAssist</h1>
+      <h5>Parental Help</h5>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/About">About</a>
+        </li>
+        <li><a href="/next_page">Login</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li>
+          <a href="/Contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="div5">
+      <p class="pfour" style="margin-top: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;font-size: xx-large;">Are you a Existing User <br />
+      <form action="{{ url_for('next_page1') }}" method="post">
+        <button type="submit" class="button3" style="margin-top: 20px;">
+          Yes
+        </button>
+      </form>
+      <form action="{{ url_for('next_page2') }}" method="post">
+        <button type="submit" class="button3"style="margin-top: 20px;">
+          No
+        </button>
+      </form>
+      </p>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParaAssist Child Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("static/pics/background3.jpeg");
+      }
+
+      #sidebar {
+        position: fixed;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+      #sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #sidebar ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid #555;
+      }
+
+      #sidebar ul li:last-child {
+        border-bottom: none;
+      }
+
+      #sidebar ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      #content {
+        margin-left: 260px;
+        padding: 20px;
+      }
+
+      #content h1 {
+        font-size: 24px;
+        margin-left: 500px;
+      }
+
+      .dashboard-item {
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Define different styles for menu items */
+      #academic {
+        background-color: #66bb6a;
+      }
+
+      #extracurricular {
+        background-color: #f57f17;
+      }
+
+      #readinglog {
+        background-color: #3f51b5;
+      }
+
+      #screentime {
+        background-color: #e53935;
+      }
+      ul#tree ul {
+        display: none;
+      }
+
+      #body h1 {
+
+        margin-left: 500px;
+      }
+
+      #dis1 {
+
+        display: none;
+        position: absolute;
+        left: 800px;
+        top: 50px;
+        color:black;
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <div id="new" style="margin-left: 500px;">
+      
+      <!-- Getting variable from another html doc-->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const variableValue = urlParams.get('item1');
+      const variableValue1 = urlParams.get('uname1');
+      document.write("<h1>This is " + variableValue + "'s Dashboard</h1>");
+
+      
+      //Passing string variable to module.py
+      var variableValue2 = urlParams.get('item1');
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/mod9?input=' + encodeURIComponent(variableValue2), true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.send();
+
+      var url = "mod11.html?variableValue=" + encodeURIComponent(variableValue);
+      //window.location.href = url;
+
+
+
+    </script>
+  </div>
+    <div id="sidebar">
+      <ul>
+        <li><span class="toggle">+</span>Academic Information
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="/mod11">Display information</a></li>
+          </ul>
+        </li>
+
+        <li><span class="toggle">+</span>Extra Curriculum
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><span class="toggle">+</span>Reading Log
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><span class="toggle">+</span>Screen Time
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display Graph</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><a href="#screentime">Generate Entire Report</a></li>
+        <ul id="tree">
+          <li>
+            <span class="toggle">+</span>Child Operations
+            <ul>
+              <li><a href="/ChildAdd?var1={{uname}}">Add a Child</a></li>
+              <li><a href="#">Update a Child</a></li>
+              <li><a href="#">Delete a Child</a></li>
+            </ul>
+         </li> 
+         <li><a href=#>Logout</a></li>
+      </ul>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+      const toggleButtons = document.querySelectorAll(".toggle");
+
+      toggleButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const ul = button.nextElementSibling;
+          if (ul.style.display === "none" || ul.style.display === "") {
+            ul.style.display = "block";
+          } else {
+            ul.style.display = "none";
+          }
+        });
+      });
+    });
+    </script>
+
+   
+
+    <!-- <script>
+      function showinfo() {
+
+        var info1 = document.getElementById("dis1");
+        info1.style.display = "block";
+         
+      }
+      
+    </script>-->
+  
+  </div>
+    
+    
+  </body>
+  </html>

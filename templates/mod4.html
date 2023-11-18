@@ -1,0 +1,213 @@
+<!-- <html>
+  <title>Capstone Project</title>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename='styles.css')}}"
+    />
+  </head>
+  <body style="align-items: center; justify-content: center">
+    <div class="div3" style="justify-content: center">
+      <div class="div1">
+        <p class="one">
+          <img
+            class="img1"
+            src="{{ url_for('static' , filename= 'pics/projimg1.jpg')}}"
+          />
+          ParaAssist
+        </p>
+        <p class="two" style="justify-items: center">Parental Help</p>
+      </div>
+    </div>
+    <div class="div4">
+      <form action="/login_form1" method="POST">
+        <br /><br /><br />
+        <label for="uname">Username</label>
+        <input type="text" id="uname1" name="uname1" /><br /><br />
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd1" name="pwd1" /><br /><br />
+        <input type="submit" value="Login" name="button1" />
+      </form>
+    </div>
+  </body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Child Management Software</title>
+    <style>
+      body {
+        background-image: url("static/pics/background3.jpeg");
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      nav {
+        background-color: rgb(92, 122, 161);
+        color: #fff;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 20px;
+      }
+
+      .container {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .banner {
+        width: 100%;
+        height: 500px;
+      }
+
+      a {
+        color: white;
+      }
+      .login-container {
+        margin: 100px auto;
+        width: 300px;
+        padding: 20px;
+        background-color: #3498db;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+      }
+
+      .login-container h3 {
+        margin-bottom: 20px;
+      }
+
+      .buttonlogin {
+        background-color: #007bff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ParaAssist</h1>
+      <h5>Parental Help</h5>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/About">About</a>
+        </li>
+        <li><a href="/next_page">Login</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li>
+          <a href="/Contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="login-container">
+      <div class="divlogin" style="text-align: center">
+        <h3>Login</h3>
+        <form action="/login_form1" method="POST">
+          <br /><br /><br />
+          <label for="uname">Username</label>
+          <input type="text" id="uname1" name="uname1" /><br /><br />
+          <label for="pwd">Password</label>
+          <input type="password" id="pwd1" name="pwd1" /><br /><br />
+          <input type="submit" value="Login" name="button1" id="buttonlogin" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>ParaAssist Child Management Software</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        text-align: center;
+      }
+
+      .login-container {
+        margin: 100px auto;
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-container h2 {
+        margin-bottom: 20px;
+      }
+
+      .input-group {
+        margin-bottom: 15px;
+      }
+
+      .input-group label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .login-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .login-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>ParaAssist Child Management Software</h2>
+      <form action="backend-login.php" method="post">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="login-button">Login</button>
+      </form>
+    </div>
+  </body>
+</html>-->

@@ -1,0 +1,111 @@
+<html>
+  <title>Capstone Project</title>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename='styles.css')}}"
+    />
+    <style>
+      p.five {
+        text-align: center;
+        margin-top: 200px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 50px;
+        font-weight: bold;
+        margin-left: 100px;
+      }
+
+      .two {
+        justify-items: center;
+      }
+
+      form {
+        font-family: "Times New Roman", Times, serif;
+        margin-top: 50px;
+      }
+
+      .four {
+        display:inline-block;
+        font-family: "Times New Roman", Times, serif;
+        font-size: medium;
+        text-align: center;
+      }
+
+      .label1 {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: small;
+        float:left;
+      }
+
+      .six {
+        float: left;
+        font-size:xx-large;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      input {
+        margin-left: 20px;
+        margin-right: 200px;
+      }
+
+      td {
+
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div3" style="justify-content: center">
+      <div class="div1">
+        <p class="one">
+          <img
+            class="img1"
+            src="{{ url_for('static' , filename= 'pics/projimg1.jpg')}}"
+          />
+          ParaAssist
+        </p>
+        <p class="two">Parental Help</p>
+      </div>
+    </div>
+
+    <p class="five">Parent Sign up form</p>
+      <form action="{{url_for('next_page4') }}" method="post">
+        <div class="four">
+        <br /><br />
+        <table>
+          <tr>
+            <td style="text-align: right;">First Name</td>
+            <td style="text-align: left;"><input type="text" name="fname" id="fname" /></td>
+            <td style="text-align: right;">Last Name</td>
+            <td style="text-align:left"><input type="text" name="lname" id="lname"></td>
+          </tr>
+          <tr>
+            <td style="text-align: right;">Email</td>
+            <td style="text-align: left;"><input type="text" name="email" id="email" value="example@example.com" style="float: left;"/><br /></td>
+            <td style="text-align: right;">Contact</td>
+            <td style="text-align: left;"><input type="text" name="contact" id="contact"></td>
+          </tr>
+          <tr>
+            <td style="text-align: right;">Address</td>
+            <td style="text-align: left;"><input type="text" name="address" id="address"></td>
+            <td style="text-align: right;">No. of kids</td>
+            <td style="text-align: left;"><input type="text" name="noofkids" id="noofkids"></td>
+          </tr>
+          <tr>
+            <td style="text-align: right;">Relation</td>
+            <td style="text-align: left;"><input type="text" name="relation" id="relation"></td>
+            <td style="text-align: right;">UserName</td>
+            <td style="text-align: left;"><input type="text" name="username" id="username"></td>
+          </tr>
+          <tr>
+            <td style="text-align: right;">Password</td>
+            <td style="text-align: left;"><input type="text" name="password" id="password"></td>
+
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center;"><input type="submit" name="create" id="create"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

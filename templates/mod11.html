@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParaAssist Child Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("static/pics/background3.jpeg");
+      }
+
+      #sidebar {
+        position: fixed;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+      #sidebar toggle ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #sidebar toggle ul li {
+        list-style-type: none;
+        padding: 10px 0;
+        border-bottom: 1px solid #555;
+      }
+
+      #sidebar ul li:last-child {
+        border-bottom: none;
+      }
+
+      #sidebar ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      #content {
+        margin-left: 260px;
+        padding: 20px;
+      }
+
+      #content h1 {
+        font-size: 24px;
+        margin-left: 500px;
+      }
+
+      .dashboard-item {
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Define different styles for menu items */
+      #academic {
+        background-color: #66bb6a;
+      }
+
+      #extracurricular {
+        background-color: #f57f17;
+      }
+
+      #readinglog {
+        background-color: #3f51b5;
+      }
+
+      #screentime {
+        background-color: #e53935;
+      }
+      
+      #body h1 {
+
+        margin-left: 500px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    Mod11
+    <div id="new" style="margin-left: 500px;">
+      
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const variableValuefinal = urlParams.get('variableValue');
+        //document.write("<h1> This is " +  variableValuefinal + "'s Dashboard</h1>");
+
+    </script>
+    
+   <h1> This is {{ studname }} 's Dashboard</h1>
+  </div>
+  
+    <div id="sidebar">
+      <ul>
+        <li><span class="toggle">+</span>Academic Information
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+
+            <li><a href="#"><span class="toggle">+</span>Display information</a></li>
+            <li><a href="/mod12">Display information yearwise</a></li>
+            <li><a href="#">Performance Chart Subject wise</a></li>
+
+
+          </ul>
+        </li>
+
+        <li><span class="toggle">+</span>Extra Curriculum
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><span class="toggle">+</span>Reading Log
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><span class="toggle">+</span>Screen Time
+          <ul>
+            <li><a href=#>Add information</a></li>
+            <li><a href=#>Delete information</a></li>
+            <li><a href="#">Update information</a></li>
+            <li><a href="#">Display Graph</a></li>
+            <li><a href="#">Display information</a></li>
+          </ul>
+        </li>
+        <li><a href="#screentime">Generate Entire Report</a></li>
+        <ul id="tree">
+          <li>
+            <span class="toggle">+</span>Child Operations
+            <ul>
+              <li><a href="/ChildAdd?var1={{uname}}">Add a Child</a></li>
+              <li><a href="#">Update a Child</a></li>
+              <li><a href="#">Delete a Child</a></li>
+            </ul>
+         </li> 
+         <li><a href=#>Logout</a></li>
+      </ul>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+      const toggleButtons = document.querySelectorAll(".toggle");
+
+      toggleButtons.forEach(function (toggleButtons) {
+        button.addEventListener("click", function () {
+
+          const ul = button.nextElementSibling;
+          if (ul.style.display === "none" || ul.style.display === "") {
+            ul.style.display = "block";
+          } else {
+            ul.style.display = "none";
+          }
+        });
+      });
+    });
+    </script>
+  </div>
+  <div id="dis1" style="margin-left: 600px;margin-top: 50px;">
+    <h4>{{studname}}'s Academic Information</h4>
+    
+    <table>
+      <tr>
+        <th>Grade</th>
+        <th>Subject Name</th>
+        <th>Marks</th>
+        <th>Exam Date</th>
+
+      </tr>
+      {% for item in academic1 %}
+      <tr>
+        <td>{{ grade }}</td>
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
+        <td>{{ item[2] }}</td>
+      </tr>
+      {% endfor %}
+      <!-- Add more rows for additional subjects -->
+    </table>
+
+  </div>
+    
+    
+  </body>
+  </html>
